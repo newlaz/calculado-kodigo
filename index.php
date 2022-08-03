@@ -22,13 +22,26 @@ switch ($key) {
     case 1:
         listarMagnitudes::listarLongitudes();
         $IUnidadC = readline('Indice de unidad a convertir: ');
+        while (verificarIndices($IUnidadC) == false) {
+            listarMagnitudes::listarLongitudes();
+            $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
+        }
         if (verificarIndices($IUnidadC) == true) {
+            listarMagnitudes::listarLongitudes();
             $IUnidadR = readline('Indice de unidad a recibir: ');
-            $valor = readline('Valor de unidad a convertir: ');
-            if (unidadesSoportadas($valor, $IUnidadC, $IUnidadR) == true) {
-                echo enviarValores($valor, $IUnidadC, $IUnidadR);
+            while (verificarIndices($IUnidadR) == false) {
+                listarMagnitudes::listarLongitudes();
+                $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
+            }
+            if (verificarIndices($IUnidadR) == true) {
+                $valor = readline('Valor de unidad a convertir: ');
+                if (unidadesSoportadas($valor, $IUnidadC, $IUnidadR) == true) {
+                    echo enviarValores($valor, $IUnidadC, $IUnidadR);
+                } else {
+                    echo "Datos no soportados.";
+                }
             } else {
-                echo "Datos no soportados.";
+                echo 'Indice no encontrado.';
             }
         } else {
             echo 'Indice no encontrado.';
