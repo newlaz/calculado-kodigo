@@ -1,4 +1,8 @@
 <?php
+interface IListar
+{
+    public static function listar();
+}
 class Magnitudes
 {
     public const MAGNITUDES = [
@@ -57,11 +61,9 @@ class Magnitudes
         4 => 'CAD',
         5 => 'MXN'
     ];
-
-    public static function listar(){}
 }
 
-class listarMagnitudes extends Magnitudes
+class listarMagnitudes extends Magnitudes implements IListar
 {
     public static function listar()
     {
@@ -71,7 +73,7 @@ class listarMagnitudes extends Magnitudes
     }
 }
 
-class listarLongitudes extends Magnitudes
+class listarLongitudes extends Magnitudes implements IListar
 {
     public static function listar()
     {
@@ -80,7 +82,7 @@ class listarLongitudes extends Magnitudes
         }
     }
 }
-class listarMasas extends Magnitudes
+class listarMasas extends Magnitudes implements IListar
 {
     public static function listar()
     {
@@ -90,7 +92,7 @@ class listarMasas extends Magnitudes
     }
 }
 
-class listarVolumen extends Magnitudes
+class listarVolumen extends Magnitudes implements IListar
 {
     public static function listar()
     {
@@ -100,7 +102,7 @@ class listarVolumen extends Magnitudes
     }
 }
 
-class listarDatos extends Magnitudes
+class listarDatos extends Magnitudes implements IListar
 {
     public static function listar()
     {
@@ -110,7 +112,7 @@ class listarDatos extends Magnitudes
     }
 }
 
-class listarTiempo extends Magnitudes
+class listarTiempo extends Magnitudes implements IListar
 {
     public static function listar()
     {
@@ -120,7 +122,8 @@ class listarTiempo extends Magnitudes
     }
 }
 
-class listarMoneda extends Magnitudes {
+class listarMoneda extends Magnitudes implements IListar
+{
     public static function listar()
     {
         for ($i = 1; $i < count(self::MONEDAS) + 1; $i++) {
