@@ -57,56 +57,71 @@ class Magnitudes
         4 => 'CAD',
         5 => 'MXN'
     ];
+
+    public static function listar(){}
 }
 
-class listarMagnitudes extends Magnitudes 
+class listarMagnitudes extends Magnitudes
 {
-
-    public static function listarMagnitudes()
+    public static function listar()
     {
         for ($i = 1; $i < count(self::MAGNITUDES) + 1; $i++) {
             echo $i . ". " . self::MAGNITUDES[$i] . "\n";
         }
     }
+}
 
-    public static function listarLongitudes()
+class listarLongitudes extends Magnitudes
+{
+    public static function listar()
     {
         for ($i = 1; $i < count(self::LONGITUDES) + 1; $i++) {
             echo $i . ". " . self::LONGITUDES[$i] . "\n";
         }
     }
-
-    public static function listarMasas()
+}
+class listarMasas extends Magnitudes
+{
+    public static function listar()
     {
         for ($i = 1; $i < count(self::MASAS) + 1; $i++) {
             echo $i . ". " . self::MASAS[$i] . "\n";
         }
     }
+}
 
-    public static function listarVolumen()
+class listarVolumen extends Magnitudes
+{
+    public static function listar()
     {
-
         for ($i = 1; $i < count(self::VOLUMEN) + 1; $i++) {
             echo $i . ". " . self::VOLUMEN[$i] . "\n";
         }
     }
+}
 
-    public static function listarDatos()
+class listarDatos extends Magnitudes
+{
+    public static function listar()
     {
-
         for ($i = 1; $i < count(self::DATOS) + 1; $i++) {
             echo $i . ". " . self::DATOS[$i] . "\n";
         }
     }
+}
 
-    public static function listarTiempo()
+class listarTiempo extends Magnitudes
+{
+    public static function listar()
     {
         for ($i = 1; $i < count(self::TIEMPO) + 1; $i++) {
             echo $i . ". " . self::TIEMPO[$i] . "\n";
         }
     }
+}
 
-    public static function listarMonedas()
+class listarMoneda extends Magnitudes {
+    public static function listar()
     {
         for ($i = 1; $i < count(self::MONEDAS) + 1; $i++) {
             echo $i . ". " . self::MONEDAS[$i] . "\n";

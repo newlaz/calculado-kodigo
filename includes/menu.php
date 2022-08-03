@@ -2,27 +2,27 @@
 require_once('includes/magnitudes.php');
 require_once('includes/longitudes.php');
 
-class menu
+class mostrarMenu
 {
     public static function menu($key)
     {
         switch ($key) {
             case 1:
-                listarMagnitudes::listarLongitudes();
+                listarLongitudes::listar();
                 echo "MAGNITUD A CONVERTIR\n";
                 $IUnidadC = readline('Indice de unidad a convertir: ');
                 while (verificaciones::verificarIndices($IUnidadC) == false) {
-                    listarMagnitudes::listarLongitudes();
+                    listarLongitudes::listar();
                     echo "MAGNITUD A CONVERTIR\n";
                     $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
                 }
                 echo 'Usted seleccionó: ' . Magnitudes::LONGITUDES[$IUnidadC] . "\n";
                 if (verificaciones::verificarIndices($IUnidadC) == true) {
-                    listarMagnitudes::listarLongitudes();
+                    listarLongitudes::listar();
                     echo "MAGNITUD QUE ESPERAS RECIBIR\n";
                     $IUnidadR = readline('Indice de unidad a recibir: ');
                     while (verificaciones::verificarIndices($IUnidadR) == false) {
-                        listarMagnitudes::listarLongitudes();
+                        listarLongitudes::listar();
                         echo "MAGNITUD QUE ESPERAS RECIBIR\n";
                         $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
                     }
@@ -41,19 +41,19 @@ class menu
                 }
                 break;
             case 2:
-                listarMagnitudes::listarMasas();
+                listarMasas::listar();
                 break;
             case 3:
-                listarMagnitudes::listarVolumen();
+                listarMagnitudes::listar();;
                 break;
             case 4:
-                listarMagnitudes::listarDatos();
+                listarMagnitudes::listar();;
                 break;
             case 5:
-                listarMagnitudes::listarMonedas();
+                listarMagnitudes::listar();;
                 break;
             case 6:
-                listarMagnitudes::listarTiempo();
+                listarMagnitudes::listar();;
                 break;
             default:
                 echo 'El valor ingresado es invalido.';

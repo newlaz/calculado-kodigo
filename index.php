@@ -11,7 +11,7 @@ class Calculadora
     {
         echo "Bienvenido a la calculadora de magnitudes\n";
         echo "Seleccione una magnitud:\n";
-        echo listarMagnitudes::listarMagnitudes();
+        echo listarMagnitudes::listar();
     }
 }
 
@@ -20,9 +20,9 @@ echo Calculadora::iniciarCalculadora();
 // Muestra las unidades de medida, de cada magnitud
 $key = readline("Elija magnitud según su indice: ");
 while (VIMagnitudes::verificarIndiceMagnitudes($key) == false) {
-    listarMagnitudes::listarMagnitudes();
+    listarMagnitudes::listar();
     $key = readline("Indice no encontrado, ingrese uno diferente: ");
 }
 
-menu::menu($key);
+mostrarMenu::menu($key);
 
