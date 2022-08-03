@@ -12,7 +12,7 @@ const LONGITUDES = [
     1 => 'CM',
     2 => 'KM',
     3 => 'M',
-    4 => 'Y', 
+    4 => 'Y',
     5 => 'IN',
 ];
 
@@ -57,11 +57,18 @@ function enviarValores($valor, $IUnidadC, $IUnidadR)
 }
 
 function verificarIndices($indice){
-    $existe = false;
     if (array_key_exists($indice, LONGITUDES)) {
-        $existe = true;
-        return $existe;
+        return true;
     } else {
-        return $existe;
+        return false;
+    }
+}
+
+function verificarValorNumerico($valor)
+{
+    if (is_numeric($valor)) {
+        return true;
+    }else{
+        return false;
     }
 }

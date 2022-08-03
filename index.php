@@ -5,7 +5,7 @@ require_once('includes/longitudes.php');
 class Calculadora
 {
 
-    public function iniciarCalculadora() // Inicia la calculadora
+    public static function iniciarCalculadora() // Inicia la calculadora
     {
         echo "Bienvenido a la calculadora de magnitudes\n";
         echo "Seleccione una magnitud:\n";
@@ -13,11 +13,10 @@ class Calculadora
     }
 }
 
-$objCalculadora = new Calculadora();
-echo $objCalculadora->iniciarCalculadora();
+echo Calculadora::iniciarCalculadora();
 
 // Muestra las unidades de medida, de cada magnitud
-$key = readline("Digite indice: ");
+$key = readline("Elija magnitud según su indice: ");
 while (VIMagnitudes::verificarIndiceMagnitudes($key) == false) {
     listarMagnitudes::listarMagnitudes();
     $key = readline("Indice no encontrado, ingrese uno diferente: ");
@@ -25,30 +24,33 @@ while (VIMagnitudes::verificarIndiceMagnitudes($key) == false) {
 switch ($key) {
     case 1:
         listarMagnitudes::listarLongitudes();
+        echo "MAGNITUD A CONVERTIR\n";
         $IUnidadC = readline('Indice de unidad a convertir: ');
         while (verificarIndices($IUnidadC) == false) {
             listarMagnitudes::listarLongitudes();
+            echo "MAGNITUD A CONVERTIR\n";
             $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
         }
         if (verificarIndices($IUnidadC) == true) {
             listarMagnitudes::listarLongitudes();
+            echo "MAGNITUD QUE ESPERAS RECIBIR\n";
             $IUnidadR = readline('Indice de unidad a recibir: ');
             while (verificarIndices($IUnidadR) == false) {
+                echo "MAGNITUD QUE ESPERAS RECIBIR\n";
                 listarMagnitudes::listarLongitudes();
                 $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
             }
             if (verificarIndices($IUnidadR) == true) {
+                echo "VALOR A CONVERTIR\n";
                 $valor = readline('Valor de unidad a convertir: ');
+                while (verificarValorNumerico($valor) == false) {
+                    echo "VALOR A CONVERTIR\n";
+                    $valor = readline('Valor de unidad a convertir no soportado, intente con otro valor: ');
+                }
                 if (unidadesSoportadas($valor, $IUnidadC, $IUnidadR) == true) {
                     echo enviarValores($valor, $IUnidadC, $IUnidadR);
-                } else {
-                    echo "Datos no soportados.";
                 }
-            } else {
-                echo 'Indice no encontrado.';
             }
-        } else {
-            echo 'Indice no encontrado.';
         }
         break;
     case 2:

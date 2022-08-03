@@ -118,12 +118,10 @@ class VIMagnitudes extends Magnitudes
 {
     public static function verificarIndiceMagnitudes($key)
     {
-        $existe = false;
         if (array_key_exists($key, self::MAGNITUDES)) {
-            $existe = true;
-            return $existe;
+            return true;
         } else {
-            return $existe;
+            return false;
         }
     }
 }
