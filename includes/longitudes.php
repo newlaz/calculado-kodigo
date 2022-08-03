@@ -10,7 +10,7 @@ class Longitudes
         "KM" => 1000,
     ];
 
-    protected const LONGITUDES = [
+    protected static $LONGITUDES = [
         1 => 'CM',
         2 => 'KM',
         3 => 'M',
@@ -52,7 +52,7 @@ class verificaciones extends Longitudes
     public static function unidadesSoportadas($valor, $IUnidadC, $IUnidadR)
     {
         $soportado = false;
-        if (array_key_exists($IUnidadC, self::LONGITUDES) && array_key_exists($IUnidadR, self::LONGITUDES) && is_numeric($valor)) {
+        if (array_key_exists($IUnidadC, self::$LONGITUDES) && array_key_exists($IUnidadR, self::$LONGITUDES) && is_numeric($valor)) {
             $soportado = true;
             return $soportado;
         } else {
@@ -62,7 +62,7 @@ class verificaciones extends Longitudes
 
     public static function verificarIndices($indice)
     {
-        if (array_key_exists($indice, self::LONGITUDES)) {
+        if (array_key_exists($indice, self::$LONGITUDES)) {
             return true;
         } else {
             return false;
@@ -83,6 +83,6 @@ class enviarValores extends conversionLongitudes
 {
     public static function enviarValores($valor, $IUnidadC, $IUnidadR)
     {
-        return self::convertir_longitud($valor, self::LONGITUDES[$IUnidadC], self::LONGITUDES[$IUnidadR]) . ' ' . self::LONGITUDES[$IUnidadR];
+        return self::convertir_longitud($valor, self::$LONGITUDES[$IUnidadC], self::$LONGITUDES[$IUnidadR]) . ' ' . self::$LONGITUDES[$IUnidadR];
     }
 }
