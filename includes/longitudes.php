@@ -10,12 +10,12 @@ class Longitudes
         "KM" => 1000,
     ];
 
-    protected static $LONGITUDES = [
-        1 => 'CM',
-        2 => 'KM',
-        3 => 'M',
-        4 => 'Y',
-        5 => 'IN',
+    public static $LONGITUDES = [
+        1 => ['CM', 'Centimetros'],
+        2 => ['KM', 'Kilometros'],
+        3 => ['M', 'Metros'],
+        4 => ['Y', 'Yardas'],
+        5 => ['IN', 'Pulgadas']
     ];
 }
 
@@ -83,6 +83,6 @@ class enviarValores extends conversionLongitudes
 {
     public static function enviarValores($valor, $IUnidadC, $IUnidadR)
     {
-        return self::convertir_longitud($valor, self::$LONGITUDES[$IUnidadC], self::$LONGITUDES[$IUnidadR]) . ' ' . self::$LONGITUDES[$IUnidadR];
+        return self::convertir_longitud($valor, self::$LONGITUDES[$IUnidadC][0], self::$LONGITUDES[$IUnidadR][0]) . ' ' . self::$LONGITUDES[$IUnidadR][0];
     }
 }

@@ -15,11 +15,11 @@ class Magnitudes
     ];
 
     public const LONGITUDES = [
-        1 => 'CM',
-        2 => 'KM',
-        3 => 'M',
-        4 => 'Y',
-        5 => 'IN',
+        1 => ['CM', 'Centimetros'],
+        2 => ['KM', 'Kilometros'],
+        3 => ['M', 'Metros'],
+        4 => ['Y', 'Yardas'],
+        5 => ['IN', 'Pulgadas']
     ];
 
     public const MASAS = [
@@ -55,11 +55,11 @@ class Magnitudes
     ];
 
     public const MONEDAS = [
-        1 => 'USD',
-        2 => 'AUD',
-        3 => 'EUR',
-        4 => 'CAD',
-        5 => 'MXN'
+        1 => ['USD', 'Dolar'],
+        2 => ['EUR', 'Euro'],
+        3 => ['GBP', 'Libra esterlina'],
+        4 => ['RUB', 'Rublo'],
+        5 => ['CNY', 'Yuan']
     ];
 }
 
@@ -78,7 +78,7 @@ class listarLongitudes extends Magnitudes implements IListar
     public static function listar()
     {
         for ($i = 1; $i < count(self::LONGITUDES) + 1; $i++) {
-            echo $i . ". " . self::LONGITUDES[$i] . "\n";
+            echo $i . ". " . self::LONGITUDES[$i][1] . "\n";
         }
     }
 }
@@ -87,7 +87,7 @@ class listarMasas extends Magnitudes implements IListar
     public static function listar()
     {
         for ($i = 1; $i < count(self::MASAS) + 1; $i++) {
-            echo $i . ". " . self::MASAS[$i] . "\n";
+            echo $i . ". " . self::MASAS[$i][1] . "\n";
         }
     }
 }
@@ -97,7 +97,7 @@ class listarVolumen extends Magnitudes implements IListar
     public static function listar()
     {
         for ($i = 1; $i < count(self::VOLUMEN) + 1; $i++) {
-            echo $i . ". " . self::VOLUMEN[$i] . "\n";
+            echo $i . ". " . self::VOLUMEN[$i][1] . "\n";
         }
     }
 }
@@ -107,7 +107,7 @@ class listarDatos extends Magnitudes implements IListar
     public static function listar()
     {
         for ($i = 1; $i < count(self::DATOS) + 1; $i++) {
-            echo $i . ". " . self::DATOS[$i] . "\n";
+            echo $i . ". " . self::DATOS[$i][1] . "\n";
         }
     }
 }
@@ -117,7 +117,7 @@ class listarTiempo extends Magnitudes implements IListar
     public static function listar()
     {
         for ($i = 1; $i < count(self::TIEMPO) + 1; $i++) {
-            echo $i . ". " . self::TIEMPO[$i] . "\n";
+            echo $i . ". " . self::TIEMPO[$i][1] . "\n";
         }
     }
 }
@@ -127,7 +127,7 @@ class listarMoneda extends Magnitudes implements IListar
     public static function listar()
     {
         for ($i = 1; $i < count(self::MONEDAS) + 1; $i++) {
-            echo $i . ". " . self::MONEDAS[$i] . "\n";
+            echo $i . ". " . self::MONEDAS[$i][1] . "\n";
         }
     }
 }

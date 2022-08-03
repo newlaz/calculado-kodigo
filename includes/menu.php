@@ -16,7 +16,7 @@ class mostrarMenu
                     echo "MAGNITUD A CONVERTIR\n";
                     $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
                 }
-                echo 'Usted seleccionó: ' . Magnitudes::LONGITUDES[$IUnidadC] . "\n";
+                echo 'Usted seleccionó: ' . Magnitudes::LONGITUDES[$IUnidadC][1] . "\n";
                 if (verificaciones::verificarIndices($IUnidadC) == true) {
                     listarLongitudes::listar();
                     echo "MAGNITUD QUE ESPERAS RECIBIR\n";
@@ -26,7 +26,7 @@ class mostrarMenu
                         echo "MAGNITUD QUE ESPERAS RECIBIR\n";
                         $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
                     }
-                    echo 'Usted seleccionó: ' . Magnitudes::LONGITUDES[$IUnidadR] . "\n";
+                    echo 'Usted seleccionó: ' . Magnitudes::LONGITUDES[$IUnidadR][1] . "\n";
                     if (verificaciones::verificarIndices($IUnidadR) == true) {
                         echo "VALOR A CONVERTIR\n";
                         $valor = readline('Valor de unidad a convertir: ');
@@ -35,7 +35,7 @@ class mostrarMenu
                             $valor = readline('Valor de unidad a convertir no soportado, intente con otro valor: ');
                         }
                         if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR) == true) {
-                            echo enviarValores::enviarValores($valor, $IUnidadC, $IUnidadR);
+                            echo $valor ." ". Magnitudes::LONGITUDES[$IUnidadC][1] . " en " . Magnitudes::LONGITUDES[$IUnidadR][1] . " = " . enviarValores::enviarValores($valor, $IUnidadC, $IUnidadR);
                         }
                     }
                 }
