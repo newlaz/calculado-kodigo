@@ -26,29 +26,29 @@ switch ($key) {
         listarMagnitudes::listarLongitudes();
         echo "MAGNITUD A CONVERTIR\n";
         $IUnidadC = readline('Indice de unidad a convertir: ');
-        while (verificarIndices($IUnidadC) == false) {
+        while (verificaciones::verificarIndices($IUnidadC) == false) {
             listarMagnitudes::listarLongitudes();
             echo "MAGNITUD A CONVERTIR\n";
             $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
         }
-        if (verificarIndices($IUnidadC) == true) {
+        if (verificaciones::verificarIndices($IUnidadC) == true) {
             listarMagnitudes::listarLongitudes();
             echo "MAGNITUD QUE ESPERAS RECIBIR\n";
             $IUnidadR = readline('Indice de unidad a recibir: ');
-            while (verificarIndices($IUnidadR) == false) {
+            while (verificaciones::verificarIndices($IUnidadR) == false) {
                 echo "MAGNITUD QUE ESPERAS RECIBIR\n";
                 listarMagnitudes::listarLongitudes();
                 $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
             }
-            if (verificarIndices($IUnidadR) == true) {
+            if (verificaciones::verificarIndices($IUnidadR) == true) {
                 echo "VALOR A CONVERTIR\n";
                 $valor = readline('Valor de unidad a convertir: ');
-                while (verificarValorNumerico($valor) == false) {
+                while (verificaciones::verificarValorNumerico($valor) == false) {
                     echo "VALOR A CONVERTIR\n";
                     $valor = readline('Valor de unidad a convertir no soportado, intente con otro valor: ');
                 }
-                if (unidadesSoportadas($valor, $IUnidadC, $IUnidadR) == true) {
-                    echo enviarValores($valor, $IUnidadC, $IUnidadR);
+                if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR) == true) {
+                    echo enviarValores::enviarValores($valor, $IUnidadC, $IUnidadR);
                 }
             }
         }
