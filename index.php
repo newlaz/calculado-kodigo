@@ -18,6 +18,10 @@ echo $objCalculadora->iniciarCalculadora();
 
 // Muestra las unidades de medida, de cada magnitud
 $key = readline("Digite indice: ");
+while (VIMagnitudes::verificarIndiceMagnitudes($key) == false) {
+    listarMagnitudes::listarMagnitudes();
+    $key = readline("Indice no encontrado, ingrese uno diferente: ");
+}
 switch ($key) {
     case 1:
         listarMagnitudes::listarLongitudes();
