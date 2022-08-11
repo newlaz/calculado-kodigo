@@ -44,16 +44,16 @@ class mostrarMenu
                 listarMasas::listar();
                 break;
             case 3:
-                listarMagnitudes::listar();;
+                listarMagnitudes::listar();
                 break;
             case 4:
-                listarMagnitudes::listar();;
+                listarMagnitudes::listar();
                 break;
             case 5:
-                listarMagnitudes::listar();;
+                listarMagnitudes::listar();
                 break;
             case 6:
-                listarMagnitudes::listar();;
+                listarMagnitudes::listar();
                 break;
             default:
                 echo 'El valor ingresado es invalido.';
