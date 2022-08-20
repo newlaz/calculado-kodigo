@@ -25,3 +25,4 @@ while (VIMagnitudes::verificarIndiceMagnitudes($key) == false) {
 }
 
 mostrarMenu::menu($key);
+echo "Hola mundo";
