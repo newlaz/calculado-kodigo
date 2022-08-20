@@ -47,38 +47,6 @@ class conversionLongitudes extends Longitudes
     }
 }
 
-class verificaciones extends Longitudes
-{
-    public static function unidadesSoportadas($valor, $IUnidadC, $IUnidadR)
-    {
-        $soportado = false;
-        if (array_key_exists($IUnidadC, self::$LONGITUDES) && array_key_exists($IUnidadR, self::$LONGITUDES) && is_numeric($valor)) {
-            $soportado = true;
-            return $soportado;
-        } else {
-            return $soportado;
-        }
-    }
-
-    public static function verificarIndices($indice)
-    {
-        if (array_key_exists($indice, self::$LONGITUDES)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public static function verificarValorNumerico($valor)
-    {
-        if (is_numeric($valor)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-}
-
 class enviarValores extends conversionLongitudes
 {
     public static function enviarValores($valor, $IUnidadC, $IUnidadR)

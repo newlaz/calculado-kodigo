@@ -1,7 +1,7 @@
 <?php
 interface IListar
 {
-    public static function listar();
+    public static function listar($objArray);
 }
 class Magnitudes
 {
@@ -22,42 +22,42 @@ class Magnitudes
         5 => ['IN', 'Pulgadas']
     ];
 
-    public const MASAS = [
-        1 => 'OZ',
-        2 => 'LB',
-        3 => 'G',
-        4 => 'MG',
-        5 => 'KG',
+    public const MASA = [
+        1 => ['G', 'Gramos'],
+        2 => ['DAG', 'Decagramos'],
+        3 => ['HG', 'Hectogramos'],
+        4 => ['DG', 'Decigramos'],
+        5 => ['KG', 'Kilogramos']
     ];
 
     public const VOLUMEN = [
-        1 => 'MM',
-        2 => 'CM',
-        3 => 'M',
-        4 => 'KL',
-        5 => 'DM',
+        1 => [0,'MM'],
+        2 => [0,'CM'],
+        3 => [0,'M'],
+        4 => [0,'KL'],
+        5 => [0,'DM']
     ];
 
     public const DATOS = [
-        1 => 'KB',
-        2 => 'MB',
-        3 => 'GB',
-        4 => 'TB',
-        5 => 'PB'
+        1 => [0,'KB'],
+        2 => [0,'MB'],
+        3 => [0,'GB'],
+        4 => [0,'TB'],
+        5 => [0,'PB']
     ];
 
     public const TIEMPO = [
-        1 => 'S',
-        2 => 'M',
-        3 => 'H',
-        4 => 'D',
-        5 => 'W'
+        1 => ['S', 'Segundos'],
+        2 => ['M', 'Minutos'],
+        3 => ['H', 'Horas'],
+        4 => ['D', 'Dias'],
+        5 => ['W', 'Semanas']
     ];
 
     public const MONEDAS = [
         1 => ['USD', 'Dolar'],
         2 => ['EUR', 'Euro'],
-        3 => ['GBP', 'Libra esterlina'],
+        3 => ['GBP', 'Libra Esterlina'],
         4 => ['RUB', 'Rublo'],
         5 => ['CNY', 'Yuan']
     ];
@@ -65,69 +65,22 @@ class Magnitudes
 
 class listarMagnitudes extends Magnitudes implements IListar
 {
-    public static function listar()
+    public static function listar($objArray)
     {
-        for ($i = 1; $i < count(self::MAGNITUDES) + 1; $i++) {
-            echo $i . ". " . self::MAGNITUDES[$i] . "\n";
+        for ($i = 1; $i < count($objArray) + 1; $i++) {
+            print_r( $i . ". ".$objArray[$i][1]. "\n");
         }
     }
 }
 
-class listarLongitudes extends Magnitudes implements IListar
+class listarMenuMag extends Magnitudes implements IListar
 {
-    public static function listar()
+    public static function listar($objArray)
     {
-        for ($i = 1; $i < count(self::LONGITUDES) + 1; $i++) {
-            echo $i . ". " . self::LONGITUDES[$i][1] . "\n";
-        }
-    }
-}
-class listarMasas extends Magnitudes implements IListar
-{
-    public static function listar()
-    {
-        for ($i = 1; $i < count(self::MASAS) + 1; $i++) {
-            echo $i . ". " . self::MASAS[$i][1] . "\n";
-        }
-    }
-}
+        $objArray = Magnitudes::MAGNITUDES;
 
-class listarVolumen extends Magnitudes implements IListar
-{
-    public static function listar()
-    {
-        for ($i = 1; $i < count(self::VOLUMEN) + 1; $i++) {
-            echo $i . ". " . self::VOLUMEN[$i][1] . "\n";
-        }
-    }
-}
-
-class listarDatos extends Magnitudes implements IListar
-{
-    public static function listar()
-    {
-        for ($i = 1; $i < count(self::DATOS) + 1; $i++) {
-            echo $i . ". " . self::DATOS[$i][1] . "\n";
-        }
-    }
-}
-
-class listarTiempo extends Magnitudes implements IListar
-{
-    public static function listar()
-    {
-        for ($i = 1; $i < count(self::TIEMPO) + 1; $i++) {
-            echo $i . ". " . self::TIEMPO[$i][1] . "\n";
-        }
-    }
-}
-
-class listarMoneda extends Magnitudes implements IListar
-{
-    public static function listar()
-    {
-        for ($i = 1; $i < count(self::MONEDAS) + 1; $i++) {
-            echo $i . ". " . self::MONEDAS[$i][1] . "\n";
+        for ($i = 1; $i < count($objArray) + 1; $i++) {
+            print_r( $i . ". ".$objArray[$i]. "\n");
         }
     }
 }
