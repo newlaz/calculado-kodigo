@@ -27,8 +27,5 @@ do{
     mostrarMenu::menu($key);
 }while($key != 7);
 
-<<<<<<< HEAD
-mostrarMenu::menu($key);
 echo "marica";
-=======
->>>>>>> 955588d7eff37234e81217e5772b077d115a5427
+
