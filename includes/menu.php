@@ -36,7 +36,7 @@ class mostrarMenu
                             $valor = readline('Valor de unidad a convertir no soportado, intente con otro valor: ');
                         }
                         if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR, Magnitudes::LONGITUDES) == true) {
-                            echo $valor . " " . Magnitudes::LONGITUDES[$IUnidadC][1] . " en " . Magnitudes::LONGITUDES[$IUnidadR][1] . " = " . enviarValores::enviarValores($valor, $IUnidadC, $IUnidadR);
+                            echo $valor . " " . Magnitudes::LONGITUDES[$IUnidadC][1] . " en " . Magnitudes::LONGITUDES[$IUnidadR][1] . " = " . enviarValores::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
                         }
                     }
                 }
@@ -55,6 +55,9 @@ class mostrarMenu
                 break;
             case 6:
                 listarMagnitudes::listar(Magnitudes::TIEMPO);
+                break;
+            case 7:
+                echo 'Usted salió del programa.';
                 break;
             default:
                 echo 'El valor ingresado es invalido.';

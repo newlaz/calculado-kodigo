@@ -12,6 +12,7 @@ class Magnitudes
         4 => 'Datos',
         5 => 'Moneda',
         6 => 'Tiempo',
+        7 => 'Salir'
     ];
 
     public const LONGITUDES = [
