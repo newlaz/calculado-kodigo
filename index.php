@@ -1,7 +1,10 @@
 <?php
 require_once('includes/menu.php');
+require_once('includes/execT.php');
+require_once('includes/config.php');
 
 
+$init  = microtime(true);
 
 class Calculadora
 {
@@ -15,6 +18,7 @@ class Calculadora
 
 // Muestra las unidades de medida, de cada magnitud
 do{
+    
     Calculadora::iniciarCalculadora();
     $key = readline("Elija magnitud o salir según su indice: ");
     
@@ -23,6 +27,11 @@ do{
         $key = readline("Indice no encontrado, ingrese uno diferente: ");
     }
     mostrarMenu::menu($key);
+    $total = execTime::time(jsonConf::getTimeConf(), $init);
+    
+
 }while($key != 7);
 
-
+if(jsonConf::getTimeConf() == true){
+    echo "\nel tiempo total de uso/ejecucion es: ".$total;
+}
