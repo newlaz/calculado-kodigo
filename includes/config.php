@@ -4,10 +4,10 @@ require_once("save.php");
 class configuracion{
 
     public const CONF = [
-    1=>'mostrar tiempo de ejecucion', 
-    2=>'desactivar tiempo de ejecucion',
-    3=>'mostrar antiguos resultados',
-    4=>'borrar lista de resultados'
+    1=>'Mostrar tiempo de ejecucion', 
+    2=>'Desactivar tiempo de ejecucion',
+    3=>'Mostrar antiguos resultados',
+    4=>'Borrar lista de resultados'
 ]; 
     
 }

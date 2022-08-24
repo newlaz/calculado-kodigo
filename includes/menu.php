@@ -43,10 +43,10 @@ class mostrarMenu
                             $valor = readline('Valor de unidad a convertir no soportado, intente con otro valor: ');
                         }
                         if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR, Magnitudes::LONGITUDES) == true) {
-                            echo $valor . " " . Magnitudes::LONGITUDES[$IUnidadC][1] . " en " . Magnitudes::LONGITUDES[$IUnidadR][1] . " = " . enviarValores::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
+                            echo $valor . " " . Magnitudes::LONGITUDES[$IUnidadC][1] . " en " . Magnitudes::LONGITUDES[$IUnidadR][1] . " = " . enviarValoresLongitudes::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
                             $Lmag1 = Magnitudes::LONGITUDES[$IUnidadC][1];
                             $Lmag2 = Magnitudes::LONGITUDES[$IUnidadR][1];
-                            $Lmag3 = enviarValores::enviarValores($valor, $IUnidadC, $IUnidadR);
+                            $Lmag3 = enviarValoresLongitudes::enviarValores($valor, $IUnidadC, $IUnidadR);
                             $info = "$valor $Lmag1 en $Lmag2 es igual a: $Lmag3";
 
                             save::saveResult($info);
@@ -268,11 +268,8 @@ class mostrarMenu
                     $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
                 }
                 echo 'Usted seleccionó: ' . configuracion::CONF[$IUnidadC] . "\n\n";
-               
                 sendConf::enviarConf($IUnidadC);
                 sleep(2);
-                    
-                
                 break;
             
             default:

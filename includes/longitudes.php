@@ -48,7 +48,7 @@ class conversionLongitudes extends Longitudes
     }
 }
 
-class enviarValores extends conversionLongitudes
+class enviarValoresLongitudes extends conversionLongitudes
 {
     public static function enviarValores($valor, $IUnidadC, $IUnidadR)
     {
