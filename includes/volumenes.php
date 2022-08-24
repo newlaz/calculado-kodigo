@@ -1,7 +1,7 @@
 <?php
 class Volumen{
 public const VOLUMEN_A_LITROS = [
-    "MM" => 0.000001,
+    "MM3" => 0.000001,
     "CM3" => 0.001,
     "M3" => 1000,
     "L" => 1,
@@ -9,7 +9,7 @@ public const VOLUMEN_A_LITROS = [
     ];
 
     public const VOLUMEN = [
-        1 => ['MM','Milimetros cubicos' ],
+        1 => ['MM3','Milimetros cubicos' ],
         2 => ['CM3','Centimetros Cubicos' ],
         3 => ['M3', 'Metros Cubicos'],
         4 => ['L', 'Litros'],
