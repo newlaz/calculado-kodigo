@@ -1,5 +1,4 @@
 <?php
-// Length
 class Longitudes
 {
     protected const LONGITUD_A_METROS = [

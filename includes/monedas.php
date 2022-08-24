@@ -1,6 +1,4 @@
 <?php
-//Money
-
 class Monedas
 {
     protected const MONEDA_A_DOLAR = [
