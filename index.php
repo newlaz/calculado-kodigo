@@ -5,7 +5,6 @@ require_once('includes/menu.php');
 
 class Calculadora
 {
-
     public static function iniciarCalculadora() // Inicia la calculadora
     {
         echo "Bienvenido a la calculadora de magnitudes\n";

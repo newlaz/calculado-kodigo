@@ -1,6 +1,5 @@
 
 <?php
-// Length
 class Tiempo
 {
     public const TIEMPO_MINUTOS = [
@@ -42,8 +41,8 @@ class conversionTiempo extends Tiempo
 
     public static function convertir_tiempo($valor, $unidad_desde, $unidad_esperada)
     {
-        $valor_metros = self::convertir_a_minutos($valor, $unidad_desde);
-        $resultado = self::convertir_desde_minutos($valor_metros, $unidad_esperada);
+        $valor_tiempo = self::convertir_a_minutos($valor, $unidad_desde);
+        $resultado = self::convertir_desde_minutos($valor_tiempo, $unidad_esperada);
         return $resultado;
     }
 }
