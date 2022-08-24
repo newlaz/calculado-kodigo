@@ -12,7 +12,8 @@ class Magnitudes
         4 => 'Datos',
         5 => 'Moneda',
         6 => 'Tiempo',
-        7 => 'Salir'
+        7 => 'Salir',
+        8 => 'Configuracion'
     ];
 
     public const LONGITUDES = [
@@ -67,7 +68,8 @@ class Magnitudes
 class listarMagnitudes extends Magnitudes implements IListar
 {
     public static function listar($objArray)
-    {
+    { 
+
         for ($i = 1; $i < count($objArray) + 1; $i++) {
             print_r( $i . ". ".$objArray[$i][1]. "\n");
         }

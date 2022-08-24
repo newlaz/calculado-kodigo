@@ -6,7 +6,9 @@ require_once('includes/volumenes.php');
 require_once('includes/datos.php');
 require_once('includes/tiempo.php');
 require_once('includes/monedas.php');
-
+require_once('includes/config.php');
+require_once('includes/save.php');
+require_once('includes/masas.php');
 
 class mostrarMenu
 {
@@ -42,42 +44,56 @@ class mostrarMenu
                         }
                         if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR, Magnitudes::LONGITUDES) == true) {
                             echo $valor . " " . Magnitudes::LONGITUDES[$IUnidadC][1] . " en " . Magnitudes::LONGITUDES[$IUnidadR][1] . " = " . enviarValores::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
+                            $Lmag1 = Magnitudes::LONGITUDES[$IUnidadC][1];
+                            $Lmag2 = Magnitudes::LONGITUDES[$IUnidadR][1];
+                            $Lmag3 = enviarValores::enviarValores($valor, $IUnidadC, $IUnidadR);
+                            $info = "$valor $Lmag1 en $Lmag2 es igual a: $Lmag3";
+
+                            save::saveResult($info);
                         }
                     }
                 }
+                sleep(2);
                 break;
             case 2:
-                listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                listarMagnitudes::listar(Magnitudes::MASAS);
                 echo "MAGNITUD A CONVERTIR\n";
                 $IUnidadC = readline('Indice de unidad a convertir: ');
-                while (verificaciones::verificarIndices($IUnidadC, Magnitudes::VOLUMEN) == false) {
-                    listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                while (verificaciones::verificarIndices($IUnidadC, Magnitudes::MASAS) == false) {
+                    listarMagnitudes::listar(Magnitudes::MASAS);
                     echo "MAGNITUD A CONVERTIR\n";
                     $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
                 }
                 echo 'Usted seleccionó: ' . Magnitudes::VOLUMEN[$IUnidadC][1] . "\n";
-                if (verificaciones::verificarIndices($IUnidadC, Magnitudes::VOLUMEN) == true) {
-                    listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                if (verificaciones::verificarIndices($IUnidadC, Magnitudes::MASAS) == true) {
+                    listarMagnitudes::listar(Magnitudes::MASAS);
                     echo "MAGNITUD QUE ESPERAS RECIBIR\n";
                     $IUnidadR = readline('Indice de unidad a recibir: ');
-                    while (verificaciones::verificarIndices($IUnidadR, Magnitudes::VOLUMEN) == false) {
-                        listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                    while (verificaciones::verificarIndices($IUnidadR, Magnitudes::MASAS) == false) {
+                        listarMagnitudes::listar(Magnitudes::MASAS);
                         echo "MAGNITUD QUE ESPERAS RECIBIR\n";
                         $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
                     }
-                    echo 'Usted seleccionó: ' . Magnitudes::VOLUMEN[$IUnidadR][1] . "\n";
-                    if (verificaciones::verificarIndices($IUnidadR, Magnitudes::VOLUMEN) == true) {
+                    echo 'Usted seleccionó: ' . Magnitudes::MASAS[$IUnidadR][1] . "\n";
+                    if (verificaciones::verificarIndices($IUnidadR, Magnitudes::MASAS) == true) {
                         echo "VALOR A CONVERTIR\n";
                         $valor = readline('Valor de unidad a convertir: ');
                         while (verificaciones::verificarValorNumerico($valor) == false) {
                             echo "VALOR A CONVERTIR\n";
                             $valor = readline('Valor de unidad a convertir no soportado, intente con otro valor: ');
                         }
-                        if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR, Magnitudes::VOLUMEN) == true) {
-                            echo $valor . " " . Magnitudes::VOLUMEN[$IUnidadC][1] . " en " . Magnitudes::VOLUMEN[$IUnidadR][1] . " = " . enviarValoresVOLUMEN::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
+                        if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR, Magnitudes::MASAS) == true) {
+                            echo $valor . " " . Magnitudes::MASAS[$IUnidadC][1] . " en " . Magnitudes::MASAS[$IUnidadR][1] . " = " . enviarValoresMasas::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
+                            $Lmag1 = Magnitudes::MASAS[$IUnidadC][1];
+                            $Lmag2 = Magnitudes::MASAS[$IUnidadR][1];
+                            $Lmag3 = enviarValoresMasas::enviarValores($valor, $IUnidadC, $IUnidadR);
+                            $info = "$valor $Lmag1 en $Lmag2 es igual a: $Lmag3";
+
+                            save::saveResult($info);  
                         }
                     }
                 }
+                sleep(2);
                 break;
             case 3:
                 listarMagnitudes::listar(Magnitudes::VOLUMEN);
@@ -108,9 +124,16 @@ class mostrarMenu
                         }
                         if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR, Magnitudes::VOLUMEN) == true) {
                             echo $valor . " " . Magnitudes::VOLUMEN[$IUnidadC][1] . " en " . Magnitudes::VOLUMEN[$IUnidadR][1] . " = " . enviarValoresVolumen::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
+                            $Lmag1 = Magnitudes::VOLUMEN[$IUnidadC][1];
+                            $Lmag2 = Magnitudes::VOLUMEN[$IUnidadR][1];
+                            $Lmag3 = enviarValoresVolumen::enviarValores($valor, $IUnidadC, $IUnidadR);
+                            $info = "$valor $Lmag1 en $Lmag2 es igual a: $Lmag3";
+
+                            save::saveResult($info);
                         }
                     }
                 }
+                sleep(2);
                 break;
             case 4:
                 listarMagnitudes::listar(Magnitudes::DATOS);
@@ -141,9 +164,16 @@ class mostrarMenu
                         }
                         if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR, Magnitudes::DATOS) == true) {
                             echo $valor . " " . Magnitudes::DATOS[$IUnidadC][1] . " en " . Magnitudes::DATOS[$IUnidadR][1] . " = " . enviarValoresDatos::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
+                            $Lmag1 = Magnitudes::DATOS[$IUnidadC][1];
+                            $Lmag2 = Magnitudes::DATOS[$IUnidadR][1];
+                            $Lmag3 = enviarValoresDatos::enviarValores($valor, $IUnidadC, $IUnidadR);
+                            $info = "$valor $Lmag1 en $Lmag2 es igual a: $Lmag3";
+
+                            save::saveResult($info);
                         }
                     }
                 }
+                sleep(2);
                 break;
             case 5:
                 listarMagnitudes::listar(Magnitudes::MONEDAS);
@@ -174,9 +204,16 @@ class mostrarMenu
                         }
                         if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR, Magnitudes::MONEDAS) == true) {
                             echo $valor . " " . Magnitudes::MONEDAS[$IUnidadC][1] . " en " . Magnitudes::MONEDAS[$IUnidadR][1] . " = " . enviarValoresMonedas::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
+                            $Lmag1 = Magnitudes::MONEDAS[$IUnidadC][1];
+                            $Lmag2 = Magnitudes::MONEDAS[$IUnidadR][1];
+                            $Lmag3 = enviarValoresMonedas::enviarValores($valor, $IUnidadC, $IUnidadR);
+                            $info = "$valor $Lmag1 en $Lmag2 es igual a: $Lmag3";
+
+                            save::saveResult($info);
                         }
                     }
                 }
+                sleep(2);
                 break;
             case 6:
                 listarMagnitudes::listar(Magnitudes::TIEMPO);
@@ -207,15 +244,40 @@ class mostrarMenu
                         }
                         if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR, Magnitudes::TIEMPO) == true) {
                             echo $valor . " " . Magnitudes::TIEMPO[$IUnidadC][1] . " en " . Magnitudes::TIEMPO[$IUnidadR][1] . " = " . enviarValoresTiempo::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
+                            $Lmag1 = Magnitudes::TIEMPO[$IUnidadC][1];
+                            $Lmag2 = Magnitudes::TIEMPO[$IUnidadR][1];
+                            $Lmag3 = enviarValoresTiempo::enviarValores($valor, $IUnidadC, $IUnidadR);
+                            $info = "$valor $Lmag1 en $Lmag2 es igual a: $Lmag3";
+
+                            save::saveResult($info);
                         }
                     }
                 }
+                sleep(2);
                 break;
             case 7:
                 echo 'Usted salió del programa.';
                 break;
+            case 8:
+                configList::listarConf();
+                echo "SELECCIONAR CONFIGURACION DESEADA\n";
+                $IUnidadC = readline('Indice de configuracion: ');
+                while (verificaciones::verificarIndices($IUnidadC, configuracion::CONF) == false) {
+                    configList::listarConf();
+                    echo "SELECCIONE una de las configuraciones disponibles\n";
+                    $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
+                }
+                echo 'Usted seleccionó: ' . configuracion::CONF[$IUnidadC] . "\n\n";
+               
+                sendConf::enviarConf($IUnidadC);
+                sleep(2);
+                    
+                
+                break;
+            
             default:
                 echo 'El valor ingresado es invalido.';
+                sleep(1);
                 break;
         }
     }
