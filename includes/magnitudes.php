@@ -32,11 +32,11 @@ class Magnitudes
     ];
 
     public const VOLUMEN = [
-        1 => ['MM3','Mililitros Cubicos' ],
-        2 => ['CM3','Centimetros Cubicos' ],
-        3 => ['M3', 'Mestros Cubicos'],
+        1 => ['MM3','Milimetros Cúbicos' ],
+        2 => ['CM3','Centimetros Cúicos' ],
+        3 => ['M3', 'Mestros Cúbicos'],
         4 => ['L', 'Litros'],
-        5 => ['FT3', 'Pies Cubicos']
+        5 => ['FT3', 'Pies Cúbicos']
     ];
 
     public const DATOS = [
