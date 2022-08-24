@@ -7,10 +7,10 @@ class Longitudes
         "Y" => 0.9144,
         "CM" => 0.01,
         "M" => 1,
-        "KM" => 1000,
+        "KM" => 1000
     ];
 
-    public static $LONGITUDES = [
+    public const LONGITUDES = [
         1 => ['CM', 'Centimetros'],
         2 => ['KM', 'Kilometros'],
         3 => ['M', 'Metros'],
@@ -51,6 +51,7 @@ class enviarValores extends conversionLongitudes
 {
     public static function enviarValores($valor, $IUnidadC, $IUnidadR)
     {
-        return self::convertir_longitud($valor, self::$LONGITUDES[$IUnidadC][0], self::$LONGITUDES[$IUnidadR][0]) . ' ' . self::$LONGITUDES[$IUnidadR][0];
+        return self::convertir_longitud($valor, self::LONGITUDES[$IUnidadC][0], self::LONGITUDES[$IUnidadR][0]) . ' ' . self::LONGITUDES[$IUnidadR][0];
     }
 }
+

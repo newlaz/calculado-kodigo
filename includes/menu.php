@@ -2,6 +2,7 @@
 require_once('includes/magnitudes.php');
 require_once('includes/longitudes.php');
 require_once('includes/verificacion.php');
+require_once('includes/volumenes.php');
 
 class mostrarMenu
 {
@@ -42,10 +43,70 @@ class mostrarMenu
                 }
                 break;
             case 2:
-                listarMagnitudes::listar(Magnitudes::MASA);
+                listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                echo "MAGNITUD A CONVERTIR\n";
+                $IUnidadC = readline('Indice de unidad a convertir: ');
+                while (verificaciones::verificarIndices($IUnidadC, Magnitudes::VOLUMEN) == false) {
+                    listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                    echo "MAGNITUD A CONVERTIR\n";
+                    $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
+                }
+                echo 'Usted seleccionó: ' . Magnitudes::VOLUMEN[$IUnidadC][1] . "\n";
+                if (verificaciones::verificarIndices($IUnidadC, Magnitudes::VOLUMEN) == true) {
+                    listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                    echo "MAGNITUD QUE ESPERAS RECIBIR\n";
+                    $IUnidadR = readline('Indice de unidad a recibir: ');
+                    while (verificaciones::verificarIndices($IUnidadR, Magnitudes::VOLUMEN) == false) {
+                        listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                        echo "MAGNITUD QUE ESPERAS RECIBIR\n";
+                        $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
+                    }
+                    echo 'Usted seleccionó: ' . Magnitudes::VOLUMEN[$IUnidadR][1] . "\n";
+                    if (verificaciones::verificarIndices($IUnidadR, Magnitudes::VOLUMEN) == true) {
+                        echo "VALOR A CONVERTIR\n";
+                        $valor = readline('Valor de unidad a convertir: ');
+                        while (verificaciones::verificarValorNumerico($valor) == false) {
+                            echo "VALOR A CONVERTIR\n";
+                            $valor = readline('Valor de unidad a convertir no soportado, intente con otro valor: ');
+                        }
+                        if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR, Magnitudes::VOLUMEN) == true) {
+                            echo $valor . " " . Magnitudes::VOLUMEN[$IUnidadC][1] . " en " . Magnitudes::VOLUMEN[$IUnidadR][1] . " = " . enviarValoresVOLUMEN::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
+                        }
+                    }
+                }
                 break;
             case 3:
                 listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                echo "MAGNITUD A CONVERTIR\n";
+                $IUnidadC = readline('Indice de unidad a convertir: ');
+                while (verificaciones::verificarIndices($IUnidadC, Magnitudes::VOLUMEN) == false) {
+                    listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                    echo "MAGNITUD A CONVERTIR\n";
+                    $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
+                }
+                echo 'Usted seleccionó: ' . Magnitudes::VOLUMEN[$IUnidadC][1] . "\n";
+                if (verificaciones::verificarIndices($IUnidadC, Magnitudes::VOLUMEN) == true) {
+                    listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                    echo "MAGNITUD QUE ESPERAS RECIBIR\n";
+                    $IUnidadR = readline('Indice de unidad a recibir: ');
+                    while (verificaciones::verificarIndices($IUnidadR, Magnitudes::VOLUMEN) == false) {
+                        listarMagnitudes::listar(Magnitudes::VOLUMEN);
+                        echo "MAGNITUD QUE ESPERAS RECIBIR\n";
+                        $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
+                    }
+                    echo 'Usted seleccionó: ' . Magnitudes::VOLUMEN[$IUnidadR][1] . "\n";
+                    if (verificaciones::verificarIndices($IUnidadR, Magnitudes::VOLUMEN) == true) {
+                        echo "VALOR A CONVERTIR\n";
+                        $valor = readline('Valor de unidad a convertir: ');
+                        while (verificaciones::verificarValorNumerico($valor) == false) {
+                            echo "VALOR A CONVERTIR\n";
+                            $valor = readline('Valor de unidad a convertir no soportado, intente con otro valor: ');
+                        }
+                        if (verificaciones::unidadesSoportadas($valor, $IUnidadC, $IUnidadR, Magnitudes::VOLUMEN) == true) {
+                            echo $valor . " " . Magnitudes::VOLUMEN[$IUnidadC][1] . " en " . Magnitudes::VOLUMEN[$IUnidadR][1] . " = " . enviarValoresVolumen::enviarValores($valor, $IUnidadC, $IUnidadR) . "\n";
+                        }
+                    }
+                }
                 break;
             case 4:
                 listarMagnitudes::listar(Magnitudes::DATOS);

@@ -23,44 +23,44 @@ class Magnitudes
         5 => ['IN', 'Pulgadas']
     ];
 
-    public const MASA = [
-        1 => ['G', 'Gramos'],
-        2 => ['DAG', 'Decagramos'],
-        3 => ['HG', 'Hectogramos'],
-        4 => ['DG', 'Decigramos'],
+    public const MASAS = [
+        1 => ['OZ', 'Onzas'],
+        2 => ['LB', 'Libras'],
+        3 => ['MG', 'Miligramos'],
+        4 => ['G', 'Gramos'],
         5 => ['KG', 'Kilogramos']
     ];
 
     public const VOLUMEN = [
-        1 => [0,'MM'],
-        2 => [0,'CM'],
-        3 => [0,'M'],
-        4 => [0,'KL'],
-        5 => [0,'DM']
+        1 => ['MM3','Mililitros Cubicos' ],
+        2 => ['CM3','Centimetros Cubicos' ],
+        3 => ['M3', 'Mestros Cubicos'],
+        4 => ['L', 'Litros'],
+        5 => ['FT3', 'Pies Cubicos']
     ];
 
     public const DATOS = [
-        1 => [0,'KB'],
-        2 => [0,'MB'],
-        3 => [0,'GB'],
-        4 => [0,'TB'],
-        5 => [0,'PB']
+        1 => ['B', 'Byte'],
+        2 => ['KB', 'Kilobytes'],
+        3 => ['MB', 'Megabytes'],
+        4 => ['GB', 'Gigabytes'],
+        5 => ['TB', 'Terabytes']
     ];
 
     public const TIEMPO = [
-        1 => ['S', 'Segundos'],
-        2 => ['M', 'Minutos'],
-        3 => ['H', 'Horas'],
-        4 => ['D', 'Dias'],
-        5 => ['W', 'Semanas']
+        1 => ['M', 'Minutos'],
+        2 => ['H', 'Horas'],
+        3 => ['D', 'Dias'],
+        4 => ['SM', 'Semanas'],
+        5 => ['MS', 'Mes']
     ];
 
     public const MONEDAS = [
-        1 => ['USD', 'Dolar'],
-        2 => ['EUR', 'Euro'],
+        1 => ['USD', 'Dolares'],
+        2 => ['EUR', 'Euros'],
         3 => ['GBP', 'Libra Esterlina'],
-        4 => ['RUB', 'Rublo'],
-        5 => ['CNY', 'Yuan']
+        4 => ['RUB', 'Rublos'],
+        5 => ['CNY', 'Yuanes']
     ];
 }
 

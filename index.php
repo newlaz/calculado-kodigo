@@ -1,7 +1,6 @@
 <?php
-require_once('includes/magnitudes.php');
-require_once('includes/longitudes.php');
 require_once('includes/menu.php');
+
 
 
 class Calculadora
@@ -27,5 +26,4 @@ do{
     mostrarMenu::menu($key);
 }while($key != 7);
 
-echo "marica";
 
