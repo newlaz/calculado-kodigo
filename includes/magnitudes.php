@@ -33,15 +33,15 @@ class Magnitudes
 
     public const VOLUMEN = [
         1 => ['MM3','Milimetros Cúbicos' ],
-        2 => ['CM3','Centimetros Cúicos' ],
-        3 => ['M3', 'Mestros Cúbicos'],
+        2 => ['CM3','Centimetros Cúbicos' ],
+        3 => ['M3', 'Metros Cúbicos'],
         4 => ['L', 'Litros'],
         5 => ['FT3', 'Pies Cúbicos']
     ];
 
     public const DATOS = [
-        1 => ['B', 'Byte'],
-        2 => ['KB', 'Kilobytes'],
+        1 => ['B','Bytes' ],
+        2 => ['KB','Kilobytes' ],
         3 => ['MB', 'Megabytes'],
         4 => ['GB', 'Gigabytes'],
         5 => ['TB', 'Terabytes']
