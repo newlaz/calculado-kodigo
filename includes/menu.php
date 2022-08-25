@@ -8,7 +8,7 @@ require_once('includes/tiempo.php');
 require_once('includes/monedas.php');
 require_once('includes/config.php');
 require_once('includes/save.php');
-require_once('includes/masas.php');
+require_once('includes/masas.php'); 
 
 class mostrarMenu
 {

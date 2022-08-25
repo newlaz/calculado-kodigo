@@ -53,7 +53,9 @@ class Magnitudes
         2 => ['H', 'Horas'],
         3 => ['D', 'Dias'],
         4 => ['SM', 'Semanas'],
-        5 => ['MS', 'Mes']
+        5 => ['MS', 'Mes'],
+        6 => ['S', 'Segundos']
+
     ];
 
     public const MONEDAS = [

@@ -31,5 +31,5 @@ do {
 } while ($key != 7);
 
 if (jsonConf::getTimeConf() == true) {
-    echo "\nel tiempo total de uso/ejecucion es: " . $total;
+    echo "\nEl tiempo total de uso/ejecucion es: " . $total . "s";
 }

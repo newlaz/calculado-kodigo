@@ -8,6 +8,7 @@ class Tiempo
         "D" => 1440,
         "SM" => 10080,
         "MS" => 43800,
+        "S" => 0.0167 
     ];
 
     protected const TIEMPO = [
@@ -15,7 +16,8 @@ class Tiempo
         2 => ['H', 'Horas'],
         3 => ['D', 'Dias'],
         4 => ['SM', 'Semanas'],
-        5 => ['MS', 'Mes']
+        5 => ['MS', 'Mes'],
+        6 => ['S', 'Segundos']
     ];
 }
 
