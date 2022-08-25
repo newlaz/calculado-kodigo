@@ -43,7 +43,7 @@ class conversionesVolumen extends Volumen
     {
         $valor_litro = self::convertir_a_litros($valor, $unidad_desde);
         $resultado = self::convertir_desde_litros($valor_litro, $unidad_recibir);
-        return number_format($resultado, 2);
+        return $resultado;
     }
 }
 class enviarValoresVolumen extends conversionesVolumen

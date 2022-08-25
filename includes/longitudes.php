@@ -44,7 +44,7 @@ class conversionLongitudes extends Longitudes
     {
         $valor_metros = self::convertir_a_metros($valor, $unidad_desde);
         $resultado = self::convertir_desde_metros($valor_metros, $unidad_esperada);
-        return number_format($resultado, 2);
+        return $resultado;
     }
 }
 

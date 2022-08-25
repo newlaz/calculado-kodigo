@@ -44,7 +44,7 @@ class conversionesDatos extends Datos
     {
         $valor_dato = self::convertir_a_litros($valor, $unidad_desde);
         $resultado = self::convertir_desde_litros($valor_dato, $unidad_recibir);
-        return number_format($resultado, 2);
+        return $resultado;
     }
 }
 class enviarValoresDatos extends conversionesDatos

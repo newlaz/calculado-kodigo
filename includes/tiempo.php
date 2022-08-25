@@ -45,7 +45,7 @@ class conversionTiempo extends Tiempo
     {
         $valor_tiempo = self::convertir_a_minutos($valor, $unidad_desde);
         $resultado = self::convertir_desde_minutos($valor_tiempo, $unidad_esperada);
-        return number_format($resultado, 2);
+        return $resultado;
     }
 }
 

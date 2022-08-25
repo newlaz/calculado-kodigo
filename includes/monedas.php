@@ -42,7 +42,7 @@ class conversionMonedas extends Monedas
     {
         $valor_dolar = self::convertir_a_dolar($valor, $unidad_desde);
         $resultado = self::convertir_desde_dolar($valor_dolar, $unidad_esperada);
-        return number_format($resultado, 2);
+        return $resultado;
     }
 }
 
