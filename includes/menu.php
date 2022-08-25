@@ -25,6 +25,7 @@ class mostrarMenu
                     $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
                 }
                 echo 'Usted seleccionó: ' . Magnitudes::LONGITUDES[$IUnidadC][1] . "\n";
+                sleep(2);
                 if (verificaciones::verificarIndices($IUnidadC, Magnitudes::LONGITUDES) == true) {
                     listarMagnitudes::listar(Magnitudes::LONGITUDES);
                     echo "MAGNITUD QUE ESPERAS RECIBIR\n";
@@ -35,6 +36,7 @@ class mostrarMenu
                         $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
                     }
                     echo 'Usted seleccionó: ' . Magnitudes::LONGITUDES[$IUnidadR][1] . "\n";
+                    sleep(2);
                     if (verificaciones::verificarIndices($IUnidadR, Magnitudes::LONGITUDES) == true) {
                         echo "VALOR A CONVERTIR\n";
                         $valor = readline('Valor de unidad a convertir: ');
@@ -64,7 +66,8 @@ class mostrarMenu
                     echo "MAGNITUD A CONVERTIR\n";
                     $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
                 }
-                echo 'Usted seleccionó: ' . Magnitudes::VOLUMEN[$IUnidadC][1] . "\n";
+                echo 'Usted seleccionó: ' . Magnitudes::MASAS[$IUnidadC][1] . "\n";
+                sleep(2);
                 if (verificaciones::verificarIndices($IUnidadC, Magnitudes::MASAS) == true) {
                     listarMagnitudes::listar(Magnitudes::MASAS);
                     echo "MAGNITUD QUE ESPERAS RECIBIR\n";
@@ -75,6 +78,7 @@ class mostrarMenu
                         $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
                     }
                     echo 'Usted seleccionó: ' . Magnitudes::MASAS[$IUnidadR][1] . "\n";
+                    sleep(2);
                     if (verificaciones::verificarIndices($IUnidadR, Magnitudes::MASAS) == true) {
                         echo "VALOR A CONVERTIR\n";
                         $valor = readline('Valor de unidad a convertir: ');
@@ -105,6 +109,7 @@ class mostrarMenu
                     $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
                 }
                 echo 'Usted seleccionó: ' . Magnitudes::VOLUMEN[$IUnidadC][1] . "\n";
+                sleep(2);
                 if (verificaciones::verificarIndices($IUnidadC, Magnitudes::VOLUMEN) == true) {
                     listarMagnitudes::listar(Magnitudes::VOLUMEN);
                     echo "MAGNITUD QUE ESPERAS RECIBIR\n";
@@ -115,6 +120,7 @@ class mostrarMenu
                         $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
                     }
                     echo 'Usted seleccionó: ' . Magnitudes::VOLUMEN[$IUnidadR][1] . "\n";
+                    sleep(2);
                     if (verificaciones::verificarIndices($IUnidadR, Magnitudes::VOLUMEN) == true) {
                         echo "VALOR A CONVERTIR\n";
                         $valor = readline('Valor de unidad a convertir: ');
@@ -145,6 +151,7 @@ class mostrarMenu
                     $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
                 }
                 echo 'Usted seleccionó: ' . Magnitudes::DATOS[$IUnidadC][1] . "\n";
+                sleep(2);
                 if (verificaciones::verificarIndices($IUnidadC, Magnitudes::DATOS) == true) {
                     listarMagnitudes::listar(Magnitudes::DATOS);
                     echo "MAGNITUD QUE ESPERAS RECIBIR\n";
@@ -155,6 +162,7 @@ class mostrarMenu
                         $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
                     }
                     echo 'Usted seleccionó: ' . Magnitudes::DATOS[$IUnidadR][1] . "\n";
+                    sleep(2);
                     if (verificaciones::verificarIndices($IUnidadR, Magnitudes::DATOS) == true) {
                         echo "VALOR A CONVERTIR\n";
                         $valor = readline('Valor de unidad a convertir: ');
@@ -185,6 +193,7 @@ class mostrarMenu
                     $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
                 }
                 echo 'Usted seleccionó: ' . Magnitudes::MONEDAS[$IUnidadC][1] . "\n";
+                sleep(2);
                 if (verificaciones::verificarIndices($IUnidadC, Magnitudes::MONEDAS) == true) {
                     listarMagnitudes::listar(Magnitudes::MONEDAS);
                     echo "MAGNITUD QUE ESPERAS RECIBIR\n";
@@ -195,6 +204,7 @@ class mostrarMenu
                         $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
                     }
                     echo 'Usted seleccionó: ' . Magnitudes::MONEDAS[$IUnidadR][1] . "\n";
+                    sleep(2);
                     if (verificaciones::verificarIndices($IUnidadR, Magnitudes::MONEDAS) == true) {
                         echo "VALOR A CONVERTIR\n";
                         $valor = readline('Valor de unidad a convertir: ');
@@ -225,6 +235,7 @@ class mostrarMenu
                     $IUnidadC = readline('Indice no encontrado, ingrese uno diferente: ');
                 }
                 echo 'Usted seleccionó: ' . Magnitudes::TIEMPO[$IUnidadC][1] . "\n";
+                sleep(2);
                 if (verificaciones::verificarIndices($IUnidadC, Magnitudes::TIEMPO) == true) {
                     listarMagnitudes::listar(Magnitudes::TIEMPO);
                     echo "MAGNITUD QUE ESPERAS RECIBIR\n";
@@ -235,6 +246,7 @@ class mostrarMenu
                         $IUnidadR = readline('Indice no encontrado, ingrese uno diferente: ');
                     }
                     echo 'Usted seleccionó: ' . Magnitudes::TIEMPO[$IUnidadR][1] . "\n";
+                    sleep(2);
                     if (verificaciones::verificarIndices($IUnidadR, Magnitudes::TIEMPO) == true) {
                         echo "VALOR A CONVERTIR\n";
                         $valor = readline('Valor de unidad a convertir: ');
