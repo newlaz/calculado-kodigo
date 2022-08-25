@@ -41,8 +41,8 @@ class conversionMasas extends Masas{
     public static function convertir_masas($value, $unidad_desde, $unidad_esperada)
     {
         $kg_valor = self::convertir_a_kilogramos($value, $unidad_desde);
-        $nuevo_valor = self::convertir_desde_kilogramos($kg_valor, $unidad_esperada);
-        return $nuevo_valor;
+        $resultado = self::convertir_desde_kilogramos($kg_valor, $unidad_esperada);
+        return number_format($resultado, 2);
     }
 }
 

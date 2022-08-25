@@ -45,14 +45,14 @@ class conversionTiempo extends Tiempo
     {
         $valor_tiempo = self::convertir_a_minutos($valor, $unidad_desde);
         $resultado = self::convertir_desde_minutos($valor_tiempo, $unidad_esperada);
-        return $resultado;
+        return number_format($resultado, 2);
     }
 }
 
 class enviarValoresTiempo extends conversionTiempo
 {
     public static function enviarValores($valor, $IUnidadC, $IUnidadR)
-    {
+    {   
         return self::convertir_tiempo($valor, self::TIEMPO[$IUnidadC][0], self::TIEMPO[$IUnidadR][0]) . ' ' . self::TIEMPO[$IUnidadR][0];
     }
 }

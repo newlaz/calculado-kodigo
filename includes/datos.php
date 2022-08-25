@@ -43,8 +43,8 @@ class conversionesDatos extends Datos
     public static function convertir_Datos($valor, $unidad_desde, $unidad_recibir)
     {
         $valor_dato = self::convertir_a_litros($valor, $unidad_desde);
-        $nuevo_valor = self::convertir_desde_litros($valor_dato, $unidad_recibir);
-        return $nuevo_valor;
+        $resultado = self::convertir_desde_litros($valor_dato, $unidad_recibir);
+        return number_format($resultado, 2);
     }
 }
 class enviarValoresDatos extends conversionesDatos
