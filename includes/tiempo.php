@@ -2,22 +2,22 @@
 <?php
 class Tiempo
 {
-    protected const TIEMPO_MINUTOS = [
-        "M" => 1,
-        "H" => 60,
-        "D" => 1440,
-        "SM" => 10080,
-        "MS" => 43800,
-        "S" => 0.0167 
+    protected const TIEMPO_SEGUNDOS = [
+        "S" => 1,
+        "M" => 60,
+        "H" => 3600,
+        "D" => 86400,
+        "SM" => 604800,
+        "MS" => 2629800
     ];
 
     protected const TIEMPO = [
-        1 => ['M', 'Minutos'],
-        2 => ['H', 'Horas'],
-        3 => ['D', 'Dias'],
-        4 => ['SM', 'Semanas'],
-        5 => ['MS', 'Mes'],
-        6 => ['S', 'Segundos']
+        1 => ['S', 'Segundos'],
+        2 => ['M', 'Minutos'],
+        3 => ['H', 'Horas'],
+        4 => ['D', 'Dias'],
+        5 => ['SM', 'Semanas'],
+        6 => ['MS', 'Mes']
     ];
 }
 
@@ -25,8 +25,8 @@ class conversionTiempo extends Tiempo
 {
     public static function convertir_a_minutos($valor, $unidad_desde)
     {
-        if (array_key_exists($unidad_desde, self::TIEMPO_MINUTOS)) {
-            return $valor * self::TIEMPO_MINUTOS[$unidad_desde];
+        if (array_key_exists($unidad_desde, self::TIEMPO_SEGUNDOS)) {
+            return $valor * self::TIEMPO_SEGUNDOS[$unidad_desde];
         } else {
             return "Unidad no soportada.";
         }
@@ -34,8 +34,8 @@ class conversionTiempo extends Tiempo
 
     public static function convertir_desde_minutos($valor, $unidad_esperada)
     {
-        if (array_key_exists($unidad_esperada, self::TIEMPO_MINUTOS)) {
-            return $valor / self::TIEMPO_MINUTOS[$unidad_esperada];
+        if (array_key_exists($unidad_esperada, self::TIEMPO_SEGUNDOS)) {
+            return $valor / self::TIEMPO_SEGUNDOS[$unidad_esperada];
         } else {
             return "Unidad no soportada.";
         }

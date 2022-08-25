@@ -49,13 +49,12 @@ class Magnitudes
     ];
 
     public const TIEMPO = [
-        1 => ['M', 'Minutos'],
-        2 => ['H', 'Horas'],
-        3 => ['D', 'Dias'],
-        4 => ['SM', 'Semanas'],
-        5 => ['MS', 'Mes'],
-        6 => ['S', 'Segundos']
-
+        1 => ['S', 'Segundos'],
+        2 => ['M', 'Minutos'],
+        3 => ['H', 'Horas'],
+        4 => ['D', 'Dias'],
+        5 => ['SM', 'Semanas'],
+        6 => ['MS', 'Mes']
     ];
 
     public const MONEDAS = [
