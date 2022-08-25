@@ -33,16 +33,16 @@ class Magnitudes
     ];
 
     public const VOLUMEN = [
-        1 => ['MM3','Milimetros Cúbicos' ],
-        2 => ['CM3','Centimetros Cúbicos' ],
+        1 => ['MM3', 'Milimetros Cúbicos'],
+        2 => ['CM3', 'Centimetros Cúbicos'],
         3 => ['M3', 'Metros Cúbicos'],
         4 => ['L', 'Litros'],
         5 => ['FT3', 'Pies Cúbicos']
     ];
 
     public const DATOS = [
-        1 => ['B','Bytes' ],
-        2 => ['KB','Kilobytes' ],
+        1 => ['B', 'Bytes'],
+        2 => ['KB', 'Kilobytes'],
         3 => ['MB', 'Megabytes'],
         4 => ['GB', 'Gigabytes'],
         5 => ['TB', 'Terabytes']
@@ -68,10 +68,10 @@ class Magnitudes
 class listarMagnitudes extends Magnitudes implements IListar
 {
     public static function listar($objArray)
-    { 
+    {
 
         for ($i = 1; $i < count($objArray) + 1; $i++) {
-            print_r( $i . ". ".$objArray[$i][1]. "\n");
+            print_r($i . ". " . $objArray[$i][1] . "\n");
         }
     }
 }
@@ -83,7 +83,7 @@ class listarMenuMag extends Magnitudes implements IListar
         $objArray = Magnitudes::MAGNITUDES;
 
         for ($i = 1; $i < count($objArray) + 1; $i++) {
-            print_r( $i . ". ".$objArray[$i]. "\n");
+            print_r($i . ". " . $objArray[$i] . "\n");
         }
     }
 }

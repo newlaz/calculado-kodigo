@@ -2,7 +2,7 @@
 <?php
 class Tiempo
 {
-    public const TIEMPO_MINUTOS = [
+    protected const TIEMPO_MINUTOS = [
         "M" => 1,
         "H" => 60,
         "D" => 1440,
@@ -10,7 +10,7 @@ class Tiempo
         "MS" => 43800,
     ];
 
-    public const TIEMPO = [
+    protected const TIEMPO = [
         1 => ['M', 'Minutos'],
         2 => ['H', 'Horas'],
         3 => ['D', 'Dias'],

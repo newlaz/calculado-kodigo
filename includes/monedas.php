@@ -9,7 +9,7 @@ class Monedas
         "USD" => 1
     ];
 
-    public const MONEDAS = [
+    protected const MONEDAS = [
         1 => ['USD', 'Dolares'],
         2 => ['EUR', 'Euros'],
         3 => ['GBP', 'Libra Esterlina'],
@@ -53,4 +53,3 @@ class enviarValoresMonedas extends conversionMonedas
         return self::convertir_moneda($valor, self::MONEDAS[$IUnidadC][0], self::MONEDAS[$IUnidadR][0]) . ' ' . self::MONEDAS[$IUnidadR][0];
     }
 }
-

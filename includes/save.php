@@ -1,11 +1,13 @@
-<?php 
+<?php
 
-class save{
+class save
+{
 
-    public static function saveResult($info){
+    public static function saveResult($info)
+    {
 
         $data = json_decode(file_get_contents('result.json'), true);
-        
+
         $newValue = array(
             "results" => "$info     desu nyan OwO",
         );
@@ -16,34 +18,25 @@ class save{
         file_put_contents("result.json", json_encode($resultArray, JSON_PRETTY_PRINT), LOCK_EX);
         //print_r($deco["time"]);
         return true;
-
     }
 
-    public static function eraseContent(){
+    public static function eraseContent()
+    {
         $data = json_decode(file_get_contents('result.json'), true);
-        
-        $newValue = array(
-            
-        );
 
-        
+        $newValue = array();
 
         file_put_contents("result.json", json_encode($newValue, JSON_PRETTY_PRINT), LOCK_EX);
         //print_r($deco["time"]);
         return true;
-
-
-
     }
 
-    public static function getContent(){
+    public static function getContent()
+    {
         $data = json_decode(file_get_contents('result.json'), true);
-        foreach($data as $row){
+        foreach ($data as $row) {
             print_r($row["results"]);
             echo "\n\n\n";
         }
-
     }
-
 }
-?>

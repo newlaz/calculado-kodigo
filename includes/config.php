@@ -82,6 +82,3 @@ class sendConf{
     }
 
 }
-
-
-?>

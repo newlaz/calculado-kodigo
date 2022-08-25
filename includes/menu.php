@@ -89,7 +89,7 @@ class mostrarMenu
                             $Lmag3 = enviarValoresMasas::enviarValores($valor, $IUnidadC, $IUnidadR);
                             $info = "$valor $Lmag1 en $Lmag2 es igual a: $Lmag3";
 
-                            save::saveResult($info);  
+                            save::saveResult($info);
                         }
                     }
                 }
@@ -271,7 +271,7 @@ class mostrarMenu
                 sendConf::enviarConf($IUnidadC);
                 sleep(2);
                 break;
-            
+
             default:
                 echo 'El valor ingresado es invalido.';
                 sleep(1);

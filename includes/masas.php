@@ -1,7 +1,7 @@
 <?php
 
 class Masas {
-    public const MASA_A_KILOGRAMO = [
+    protected const MASA_A_KILOGRAMO = [
         "OZ" =>    0.0283495,
         "LB" =>    0.453592,
         "MG" =>    0.000001,
@@ -9,7 +9,7 @@ class Masas {
         "KG" =>    1
     ];
 
-    public const MASAS = [
+    protected const MASAS = [
         1 => ['OZ', 'Onzas'],
         2 => ['LB', 'Libras'],
         3 => ['MG', 'Miligramos'],
